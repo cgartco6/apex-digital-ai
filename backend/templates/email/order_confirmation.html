@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Order Confirmation - Apex Digital AI</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background: #2563eb; color: white; padding: 20px; text-align: center; }
+        .content { padding: 30px; background: #f8fafc; }
+        .footer { text-align: center; padding: 20px; color: #64748b; font-size: 12px; }
+        .button { display: inline-block; padding: 12px 24px; background: #2563eb; color: white; text-decoration: none; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Apex Digital AI</h1>
+        </div>
+        
+        <div class="content">
+            <h2>Order Confirmation</h2>
+            <p>Dear {{ name }},</p>
+            <p>Thank you for your order with Apex Digital AI. Your project has been successfully created and our AI team is already working on it.</p>
+            
+            <h3>Order Details:</h3>
+            <p><strong>Project Code:</strong> {{ project_code }}</p>
+            <p><strong>Service:</strong> {{ service }}</p>
+            <p><strong>Package:</strong> {{ package }}</p>
+            <p><strong>Amount:</strong> R{{ amount }}</p>
+            
+            <p>You can track the progress of your project at any time by logging into your dashboard:</p>
+            <p style="text-align: center; margin: 30px 0;">
+                <a href="https://apex-digital.co.za/dashboard" class="button">View Dashboard</a>
+            </p>
+            
+            <p>If you have any questions or need assistance, please don't hesitate to contact our support team at support@apex-digital.co.za or call us at 083 425 8240.</p>
+            <p>Best regards,<br>The Apex Digital AI Team</p>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; {{ year }} Apex Digital AI. All rights reserved.</p>
+            <p>18 Popham Street, Tableview 7441, South Africa</p>
+        </div>
+    </div>
+</body>
+</html>
