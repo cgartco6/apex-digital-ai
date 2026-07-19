@@ -1,0 +1,82 @@
+---
+
+### 2. `index.html` (Latest Version)
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Digital AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .title-font { font-family: 'Space Grotesk', sans-serif; }
+        #canvas { background: white; box-shadow: 0 25px 50px -12px rgb(0 0 0); border-radius: 24px; }
+        .header-bg { background: linear-gradient(90deg, #0a0a0a, #2a0040, #0a0a0a); }
+    </style>
+</head>
+<body class="flex h-screen overflow-hidden bg-zinc-950 text-white">
+    <!-- Tools Sidebar -->
+    <div class="w-20 bg-black flex flex-col items-center py-10 space-y-10 border-r border-zinc-900">
+        <div onclick="setTool('pencil')" class="tool-btn active w-12 h-12 flex items-center justify-center text-3xl hover:bg-zinc-900 rounded-2xl cursor-pointer">✏️</div>
+        <div onclick="setTool('brush')" class="tool-btn w-12 h-12 flex items-center justify-center text-3xl hover:bg-zinc-900 rounded-2xl cursor-pointer">🖌️</div>
+        <div onclick="setTool('eraser')" class="tool-btn w-12 h-12 flex items-center justify-center text-3xl hover:bg-zinc-900 rounded-2xl cursor-pointer">🧼</div>
+    </div>
+
+    <!-- Main -->
+    <div class="flex-1 flex flex-col">
+        <!-- Header -->
+        <header class="header-bg h-20 border-b border-purple-900/30 flex items-center px-8">
+            <div class="flex items-center gap-4">
+                <div class="text-5xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400 title-font">APEX</div>
+                <div>
+                    <div class="text-2xl font-semibold tracking-tight">DIGITAL AI</div>
+                    <div class="text-xs uppercase tracking-widest text-purple-400">DESIGN • BRAND • MARKET</div>
+                </div>
+            </div>
+            <div class="flex-1"></div>
+            <div class="flex gap-4">
+                <button onclick="newProject()" class="px-6 py-3 text-sm font-medium border border-white/30 hover:bg-white/10 rounded-2xl">New Project</button>
+                <button onclick="exportPNG()" class="px-8 py-3 bg-white text-black font-semibold rounded-2xl">Export Design</button>
+            </div>
+        </header>
+
+        <div class="flex flex-1 overflow-hidden">
+            <!-- Canvas -->
+            <div class="flex-1 flex items-center justify-center p-12 bg-zinc-950">
+                <canvas id="canvas" width="1480" height="940" class="max-h-full"></canvas>
+            </div>
+
+            <!-- AI Panel -->
+            <div class="w-96 bg-zinc-900 border-l border-zinc-800 flex flex-col">
+                <div class="p-8 border-b border-zinc-800">
+                    <h2 class="text-3xl font-semibold title-font">Text to Design</h2>
+                    <p class="text-zinc-400 mt-2">Describe your vision</p>
+                </div>
+                
+                <div class="p-8 flex-1 flex flex-col">
+                    <textarea id="prompt" rows="5" class="bg-black border border-zinc-700 rounded-3xl p-6 focus:border-purple-500 outline-none text-sm" placeholder="Futuristic AI agency website..."></textarea>
+                    
+                    <button onclick="generateDesign()" class="mt-6 py-5 bg-gradient-to-r from-purple-600 to-fuchsia-600 rounded-3xl text-lg font-semibold">Generate Design</button>
+                    
+                    <div class="mt-8">
+                        <p class="text-xs uppercase tracking-widest text-zinc-500 mb-3">Preset Prompts</p>
+                        <div class="space-y-2">
+                            <button onclick="loadPreset(this)" class="text-left w-full text-sm p-3 bg-zinc-800 hover:bg-zinc-700 rounded-2xl">Futuristic AI Agency Dashboard</button>
+                            <button onclick="loadPreset(this)" class="text-left w-full text-sm p-3 bg-zinc-800 hover:bg-zinc-700 rounded-2xl">Cyberpunk Brand Identity</button>
+                            <button onclick="loadPreset(this)" class="text-left w-full text-sm p-3 bg-zinc-800 hover:bg-zinc-700 rounded-2xl">Premium Tech Product Landing Page</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="generatedDesigns" class="flex-1 p-8 overflow-auto"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
