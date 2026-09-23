@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xtreme Graphics</title>
+  <style>
+    :root { --navy: #0A2540; --dark-grey: #333333; --light-grey: #F5F5F5; --royal-blue: #007BFF; }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #FFFFFF;
+      color: #000000;
+      line-height: 1.6;
+    }
+    header { background:#0A2540; color:#FFFFFF; padding:1.5rem 5%; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+    .logo { font-size:28px; font-weight:700; }
+    .hero {
+      background: #0A2540;
+      color: #FFFFFF;
+      padding: 120px 5% 80px;
+      text-align: center;
+    }
+    .hero h1 { font-size: 4.2rem; margin-bottom: 20px; }
+    .hero p { font-size: 1.5rem; max-width: 700px; margin: 0 auto 40px; }
+    .btn-primary {
+      background: #007BFF;
+      color: #FFFFFF;
+      padding: 16px 40px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: #0056b3; transform: translateY(-3px); }
+    .services { padding: 100px 5%; background: #FFFFFF; }
+    .services h2 { font-size: 2.8rem; text-align: center; margin-bottom: 80px; color: #0A2540; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    .card {
+      background: #F5F5F5;
+      border-radius: 16px;
+      padding: 40px 30px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(10,37,64,0.1); }
+    .card-icon { font-size: 3.5rem; margin-bottom: 20px; }
+    .footer {
+      background: #0A2540;
+      color: #FFFFFF;
+      padding: 80px 5% 40px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header><div class="logo">XTREME GRAPHICS</div></header>
+  <div class="hero">
+    <h1>Xtreme Graphics</h1>
+    <p>Professional AI solutions.<br>Built for results.</p>
+    <a href="#" class="btn-primary">Book Your Free Strategy Call</a>
+  </div>
+  <div class="services">
+    <h2>Our Services</h2>
+    <div class="grid">
+      <div class="card"><div class="card-icon">🎨</div><h3>Branding & Identity</h3><p>Bold brands that stand out and leave a lasting impact.</p></div>
+      <div class="card"><div class="card-icon">💻</div><h3>Web & UI/UX Design</h3><p>Modern, responsive designs that engage and convert.</p></div>
+      <div class="card"><div class="card-icon">✨</div><h3>Motion Graphics</h3><p>Dynamic visuals that tell your story and drive results.</p></div>
+      <div class="card"><div class="card-icon">📢</div><h3>Digital Marketing</h3><p>Data-driven strategies that grow your brand online.</p></div>
+    </div>
+  </div>
+  <div class="footer">
+    <p>XTREME GRAPHICS © 2026</p>
+    <p style="font-size:0.9rem; opacity:0.8;">Professional. Precise. Powerful.</p>
+  </div>
+</body>
+</html>
