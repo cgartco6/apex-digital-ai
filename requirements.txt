@@ -1,0 +1,11 @@
+crewai>=0.51.0
+langchain>=0.2.14
+langchain-openai
+langchain-community
+python-dotenv
+rich
+pydantic
+instructor
+fastapi
+uvicorn[standard]
+pillow
